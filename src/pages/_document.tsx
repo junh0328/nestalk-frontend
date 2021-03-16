@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-use-before-define
 import React from 'react';
-import Document, { DocumentContext, Head, Main, NextScript } from 'next/document';
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
 import { Helmet, HelmetData } from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 
@@ -30,7 +30,7 @@ class MyDocument extends Document<Props> {
     const bodyAttrs = bodyAttributes.toComponent();
 
     return (
-      <html {...htmlAttrs} lang="ko">
+      <Html {...htmlAttrs} lang="ko">
         <Head>
           {this.props.styleTags}
           {Object.values(helmet).map((el) => el.toComponent())}
@@ -39,7 +39,7 @@ class MyDocument extends Document<Props> {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
