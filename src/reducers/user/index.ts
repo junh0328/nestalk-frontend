@@ -22,10 +22,10 @@ type ReducerAction = SignIn;
 
 //모든 user 상태 처리
 const user = (state: UserInitialState = initialState, action: ReducerAction) =>
-  produce(state, (status: UserInitialState) => {
+  produce(state, (draft: UserInitialState) => {
     switch (action.type) {
       case SIGNIN_REQUEST:
-        status.info = null;
+        draft.info = null;
         break;
 
       default:

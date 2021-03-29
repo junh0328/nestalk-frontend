@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nestalk</title>
+        <link
+            href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+            rel='stylesheet'
+            type='text/css'>
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/variables.css">
+    </head>
+
+    <body>
+        <section>
+            <!-- modal -->
+            <!-- add-friend -->
+            <!-- modal-add-friend : button-add-friend click시 팝업 -->
+            <div class="modal-add-friend">
+                <div class="top">
+                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    <h2>친구 추가</h2>
+                </div>
+
+                <button type="button" class="button-add-friend-phone">
+                    <img src="#" alt="아이콘"><br>연락처로 추가
+                </button>
+
+                <button type="button" class="button-add-friend-id">
+                    <img src="#" alt="아이콘"><br>ID로 추가
+                </button>
+            </div>
+
+            <!-- modal-add-friend-phone : button-add-friend-phone click시 팝업 -->
+            <div class="modal-add-friend-phone">
+                <div class="top">
+                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    <h2>연락처로 추가</h2>
+                    <button type="button" class="button-check">확인</button>
+                </div>
+
+                <form action="#">
+                    <fieldset>
+                        <input class="friend-name" type="text" value="친구 이름" onfocus="this.value=''">
+
+                        <div class="friend-phone">
+                            <select name="International-number">
+                                <option value="ko">+82</option>
+                                <option value="jp">+81</option>
+                            </select>
+                            <input type="text" value="전화번호" onfocus="this.value=''">
+                            <p>-없이 숫자만 입력해 주세요.</p>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- modal-add-friend-phone-final : true/false 값에 따라 message 다르게 표기-->
+            <div class="modal-add-friend-phone-final">
+                <h2>연락처로 친구 추가</h2>
+                <p class="true">친구 등록이 완료되었습니다.</p>
+                <p class="false">등록된 정보가 없습니다.
+                    <br>
+                    이름 또는 전화번호를 다시 확인해주세요.</p>
+                <button type="button" class="button-check">확인</button>
+            </div>
+
+            <!-- modal-add-friend-id : button-add-friend-id click시 팝업 -->
+            <div class="modal-add-friend-id">
+                <div class="top">
+                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    <h2>nestalk ID로 추가</h2>
+                    <button type="button" class="button-check">확인</button>
+                </div>
+
+                <form action="#">
+                    <fieldset>
+                        <input
+                            class="friend-id"
+                            type="text"
+                            value="친구 nestalk ID"
+                            onfocus="this.value=''">
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- modal-add-friend-id-final : true/false 값에 따라 message 다르게 표기-->
+            <div class="modal-add-friend-id-final">
+                <h2>ID로 친구 추가</h2>
+                <p class="true">친구 등록이 완료되었습니다.</p>
+                <p class="false">등록된 정보가 없습니다.
+                    <br>
+                    ID를 다시 확인해주세요.
+                </p>
+                <button type="button" class="button-check">확인</button>
+            </div>
+
+            <!-- profile -->
+            <!-- modal-my-profile -->
+            <!-- modal-my-profile : button-my-profile click시 팝업 -->
+            <div class="modal-my-profile">
+                <div class="top">
+                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    <button type="button" class="button-background"><img src="#" alt="배경이미지"></button>
+                  </div>
+
+                <div class="profile">
+                    <button type="button" class="button-profile"><img src="#" alt="프로필이미지"></button>
+                    <p class="name">test</p>
+                </div>
+
+                <button type="button" class="button-edit">
+                    <img src="./image/icon/edit-24px.svg" alt="아이콘"><br>프로필 편집
+                </button>
+
+                <!-- modal-background : button-background click시 팝업 -->
+                <div class="modal-background">
+                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    <div class="image-box"><img src="#" alt="배경이미지"></div>
+                </div>
+
+                <!-- modal-profile : button-profile click시 팝업 -->
+                <div class="modal-profile">
+                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    <div class="image-box"><img src="#" alt="프로필이미지"></div>
+                </div>
+
+                <!-- modal-edit : button-edit click시 팝업 -->
+                <div class="modal-adit">
+                    <div class="top">
+                        <button type="button" class="button-cancel">취소</button>
+                        <button type="button" class="button-finish">완료</button>
+                    </div>
+
+                    <button type="button" class="button-adit-profile"><img src="./image/icon/local_see-24px.svg" alt="프로필 수정"></button>
+                    <button type="button" class="button-adit-name"><img src="./image/icon/edit-24px.svg" alt="이름 수정"></button>
+                    <button type="button" class="button-adit-message"><img src="./image/icon/edit-24px.svg" alt="상태메세지 수정"></button>
+                    <button type="button" class="button-adit-background"><img src="./image/icon/local_see-24px.svg" alt="배경화면 수정"></button>
+                </div>
+
+                <!-- modal-edit-profile : button-adit-profile click시 팝업 -->
+                <div class="modal-edit-profile"></div>
+
+                <!-- modal-edit-name : button-adit-name click시 팝업 -->
+                <div class="modal-edit-name">
+                    <div class="top">
+                        <button type="button" class="button-cancel">취소</button>
+                        <h2>이름</h2>
+                        <button type="button" class="button-finish">완료</button>
+                    </div>
+
+                    <form action="#">
+                        <fieldset>
+                            <input class="name" type="text" value="#">
+                        </fieldset>
+                    </form>
+                </div>
+
+                <!-- modal-edit-message : button-adit-message click시 팝업 -->
+                <div class="modal-edit-message">
+                    <div class="top">
+                        <button type="button" class="button-cancel">취소</button>
+                        <h2>상태메세지</h2>
+                        <button type="button" class="button-finish">완료</button>
+                    </div>
+
+                    <form action="#">
+                        <fieldset>
+                            <input class="name" type="text" value="#">
+                        </fieldset>
+                    </form>
+                </div>
+
+                <!-- modal-edit-background : button-adit-backgrounde click시 팝업 -->
+                <div class="modal-edit-background"></div>
+            </div>
+
+            <!-- modal-friend-profile -->
+            <!-- modal-friend-profile : button-friend-profile click시 팝업 -->
+            <div class="modal-friend-profile">
+                <div class="top">
+                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    <button type="button" class="button-background"><img src="#" alt="배경이미지"></button>
+                </div>
+
+                <div class="profile">
+                    <button type="button" class="button-profile"><img src="#" alt="프로필이미지"></button>
+                    <p class="name">test</p><button type="button" class="button-adit-name"><img src="./image/icon/edit-24px.svg" alt="프로필이미지"></button>
+                </div>
+
+                <button type="button" class="button-chat">
+                    <img src="./image/icon/chat_bubble-24px.svg" alt="아이콘"><br>1:1 채팅
+                </button>
+
+                <!-- modal-background : button-background click시 팝업 -->
+                <div class="modal-background">
+                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    <div class="image-box"><img src="#" alt="배경이미지"></div>
+                </div>
+
+                <!-- modal-profile : button-profile click시 팝업 -->
+                <div class="modal-profile">
+                    <button type="button" class="button-close"><img src="#" alt="닫기"></button>
+                    <div class="image-box"><img src="#" alt="프로필이미지"></div>
+                </div>
+
+                <!-- modal-edit-name : button-adit-name click시 팝업 -->
+                <div class="modal-edit-name">
+                    <div class="top">
+                        <button type="button" class="button-cancel">취소</button>
+                        <h2>이름</h2>
+                        <button type="button" class="button-finish">완료</button>
+                    </div>
+
+                    <form action="#">
+                        <fieldset>
+                            <input class="name" type="text" value="#">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nestalk</title>
+        <link
+            href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+            rel='stylesheet'
+            type='text/css'>
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/variables.css">
+        <link rel="stylesheet" href="./css/list-friend.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Navigation -->
+            <nav class="nav-tab">
+                <div class="nav-tab__main">
+                    <button type="button" class="nav__button">
+                        <img src="./image/icon/person-24px.svg" alt="friend list button">
+                    </button>
+                    <button type="button" class="nav__button">
+                        <img src="./image/icon/chat_bubble_outline-24px.svg" alt="chat list button">
+                    </button>
+                </div>
+                <div class="nav-tab__sub">
+                    <button type="button" class="nav__button">
+                        <img src="./image/icon/settings-24px.svg" alt="setting button">
+                    </button>
+                </div>
+            </nav>
+
+            <!-- nav : friend list button click시 보이기 -->
+            <div class="friend-list">
+                <!--(Common)Header -->
+                <header class="screen-header">
+                    <!-- Screen header -->
+                    <h1 class="screen-header__title">친구</h1>
+                    <div class="screen-header__icons">
+                        <button type="button" class="screen-header__icon">
+                            <img src="./image/icon/search-24px.svg" alt="search button">
+                        </button>
+                        <button type="button" class="screen-header__icon">
+                            <img src="./image/icon/person_add_alt_1-24px.svg" alt="add comment button">
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Screen Main -->
+                <main class="screen-main">
+                    <!-- friend list -->
+                    <div class="user-friend-list">
+                        <!-- my -->
+                        <button class="user-my-item">
+                            <div class="user-my__column">
+                                <div class="user-my__photo">
+                                    <img src="./image/icon/user-620px.png" alt="friend profile photo"/>
+                                </div>
+                                <div class="user__text">
+                                    <h4 class="user-name">name</h4>
+                                    <h6 class="user-profile-message">
+                                        message
+                                    </h6>
+                                </div>
+                            </div>
+                        </button>
+
+                        <!-- friend -->
+                        <div class="friend list">
+                            <h3 class="list-title">친구</h3>
+                            <button class="user-friend-item">
+                                <div class="user-friend__column">
+                                    <div class="user-friend__photo">
+                                        <img src="./image/icon/user-620px.png" alt="friend profile photo"/>
+                                    </div>
+                                    <div class="user__text">
+                                        <h4 class="user-name">name</h4>
+                                        <h6 class="user-profile-message">
+                                            message
+                                        </h6>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

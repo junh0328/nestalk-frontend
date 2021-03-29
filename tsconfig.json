@@ -23,6 +23,7 @@
       "@store/*": ["src/store/*"],
       "@pages/*": ["src/components/pages/*"],
       "@frames/*": ["src/components/frames/*"],
+      "@types/*": ["src/types/*"],
     }
   },
   "exclude": ["node_modules"],

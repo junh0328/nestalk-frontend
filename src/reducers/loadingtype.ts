@@ -1,0 +1,5 @@
+// ChatRoom
+export const CHATTING_ROOM_LIST_SUBMIT = 'CHATTING_ROOM_LIST_SUBMIT' as const;
+export const CHATTING_ROOM_ADD_SUBMIT = 'CHATTING_ROOM_ADD_SUBMIT' as const;
+
+export type chatRoomType = typeof CHATTING_ROOM_LIST_SUBMIT | typeof CHATTING_ROOM_ADD_SUBMIT;

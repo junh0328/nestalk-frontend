@@ -2,7 +2,6 @@ import React from 'react';
 import { AppProps, AppContext } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
-import AppLayout from '@frames/AppLayout';
 import theme from '@theme/.';
 import GlobalStyle from '@theme/globalStyle';
 import wrapper from '@store/configureStore';
@@ -20,9 +19,7 @@ const KakaoMain = ({ Component, pageProps }: AppProps) => {
         ></link>
       </Head>
       <GlobalStyle />
-      <AppLayout>
-        <Component {...pageProps} />
-      </AppLayout>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 };

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nestalk</title>
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/list-chat.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav-tab">
+      <div class="nav-tab__main">
+        <button type="button" class="nav__button">
+          <img src="./image/icon/perm_identity-24px.svg" alt="friend list button">
+        </button>
+        <button type="button" class="nav__button">
+          <img src="./image/icon/chat_bubble-24px.svg" alt="chat list button">
+        </button>
+      </div>
+      <div class="nav-tab__sub">
+        <button type="button" class="nav__button">
+          <img src="./image/icon/settings-24px.svg" alt="setting button">
+        </button>
+      </div>
+    </nav>
+
+    <!-- nav > chat list button 클릭시 나오는 화면 -->
+    <div class="chat-list">
+      <!--(Common)Header -->
+      <header class="screen-header">
+        <!-- Screen header -->
+        <h1 class="screen-header__title">채팅</h1>
+        <div class="screen-header__icons">
+          <button type="button" class="screen-header__icon">
+            <img src="./image/icon/search-24px.svg" alt="search button">
+          </button>
+          <button type="button" class="screen-header__icon">
+            <img src="./image/icon/add_comment-24px.svg" alt="add comment button">
+          </button>
+        </div>
+      </header>
+
+      <!-- Screen Main -->
+      <main class="screen-main">
+        <!-- Chat list -->
+        <div class="user-chat-list">
+          <!-- 1:1 chat -->
+          <button class="user-chat-item">
+            <div class="user-chat__column">
+              <div class="user-chat__photo">
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" />
+              </div>
+              <div class="user-chat__text">
+                <h4 class="user-chat__title">Friend</h4>
+                <h6 class="user-chat__content">
+                  Lorem ipsum dolor adipisicing elit.
+                </h6>
+              </div>
+            </div>
+            <div class="user-chat__column">
+              <span class="user-chat__time">11:00</span>
+              <div class="notice">1</div>
+            </div>
+          </button>
+
+          <!-- Group chat(3명) -->
+          <button class="user-chat-item">
+            <div class="user-chat__column">
+              <div class="user-chat__photo user-chat__group--3">
+                <!-- Friends profile photo -->
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+              </div>
+
+              <div class="user-chat__text">
+                <h4 class="user-chat__title">Friend, Friend,Friend <span class="user-chat__group--num">3</span></h4>
+                <h6 class="user-chat__content">
+                  Lorem ipsum dolor adipisicing elit.
+                </h6>
+              </div>
+            </div>
+            <div class="user-chat__column">
+              <span class="user-chat__time">11:00</span>
+              <div class="notice">1</div>
+            </div>
+          </button>
+
+          <!-- Group chat(4명) -->
+          <button class="user-chat-item">
+            <div class="user-chat__column">
+              <div class="user-chat__photo user-chat__group--4">
+                <!-- Friends profile photo -->
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+              </div>
+
+              <div class="user-chat__text">
+                <h4 class="user-chat__title">Friend, Friend,Friend <span class="user-chat__group--num">4</span></h4>
+                <h6 class="user-chat__content">
+                  Lorem ipsum dolor adipisicing elit.
+                </h6>
+              </div>
+            </div>
+            <div class="user-chat__column">
+              <span class="user-chat__time">11:00</span>
+              <div class="notice">1</div>
+            </div>
+          </button>
+
+          <!-- Group chat(5명이상) -->
+          <button class="user-chat-item">
+            <div class="user-chat__column">
+              <div class="user-chat__photo user-chat__group">
+                <!-- Friends profile photo -->
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+                <img src="./image/icon/user-620px.png" alt="friend profile photo" class="group" />
+              </div>
+
+              <div class="user-chat__text">
+                <h4 class="user-chat__title">Friend,Friend,Friend,Friend <span class="user-chat__group--num">5</span>
+                </h4>
+                <h6 class="user-chat__content">
+                  Lorem ipsum dolor adipisicing elit.
+                </h6>
+              </div>
+            </div>
+            <div class="user-chat__column">
+              <span class="user-chat__time">11:00</span>
+              <div class="notice">1</div>
+            </div>
+          </button>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>

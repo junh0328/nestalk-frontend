@@ -1,0 +1,26 @@
+/* Basic setting */
+body {
+  min-width: 320px;
+  max-width: 720px;
+  font-size: 10px;
+  background-color: var(--primary-color);
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  color: var(--black-color);
+  margin: 0 auto;
+}
+
+/* 채팅목록 > 검색 버튼 클릭 시 */
+
+/* 채팅목록 > 새로운 채팅 버튼 클릭 시(대화상대 선택) */
+
+/* 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대) */
+
+/* 채팅창(새 창) */
+
+/* 채팅창 > 검색 버튼 클릭 시 */
+
+/* 채팅창 > 더보기 버튼 클릭 시  */
+
+/* 채팅창 > 더보기 > 채팅방 설정 버튼 클릭 시  */
+
+/* 채팅창 > 더보기 > 채팅방 나가기 버튼 클릭 시 (알림 팝업)  */

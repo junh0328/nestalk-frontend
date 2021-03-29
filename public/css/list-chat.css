@@ -1,0 +1,202 @@
+body {
+  min-width: 320px;
+  max-width: 720px;
+  font-size: 10px;
+  background-color: var(--primary-color);
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  color: var(--black-color);
+  margin: 0 auto;
+}
+
+.container{
+  display: flex;
+  min-width: 300px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100vh;
+  padding: 20px var(--gap-10);
+  background-color: var(--secondary-color);
+}
+
+.nav-tab__main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-tab__main button:first-child{
+  margin-bottom: 25px;
+}
+
+
+/* List chat */
+.chat-list{
+  flex: 1;
+}
+
+/* Screen Header */
+.screen-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px var(--gap-10) var(--gap-10);
+  background-color: var(--primary-color);
+}
+
+.screen-header__title {
+  font-size: var(--font-size-xlarge);
+  font-weight: 600;
+}
+
+.screen-header__icon:last-child {
+  margin-left: var(--gap-10);
+}
+
+.screen-header__icon img {
+  width: 20px;
+}
+
+
+/* Screen Main */
+.user-chat-item {
+  width: 100%;
+  padding: var(--gap-10);
+}
+
+.user-chat-item:hover {
+  background-color: var(--secondary-color);
+}
+
+.user-chat-item,
+.user-chat__column:first-child {
+  display: flex;
+}
+
+.user-chat-item {
+  justify-content: space-between;
+}
+
+.user-chat__photo,.user-chat__group {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  margin-right: var(--gap-10);
+}
+
+/* Group chat(3명) */
+.user-chat__photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+
+/* Group chat(3명) */
+.user-chat__group--3 .group,
+.user-chat__group--4 .group{
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+.user-chat__group--3 .group:first-child{
+  top: 5px;
+}
+.user-chat__group--3 .group:last-child{
+  top: 20px;
+  left: 20px;
+}
+
+/* Group chat(4명) */
+.user-chat__group--4 .group:first-child{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.user-chat__group--4 .group:nth-child(2){
+  top: 20px;
+}
+.user-chat__group--4 .group:last-child{
+  top: 20px;
+  left: 20px;
+}
+
+/* Group chat */
+.user-chat__group{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+
+.user-chat__group .group{
+  margin-right: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+}
+
+.user-chat__group .group:nth-child(even){
+  margin-right: 0;
+}
+
+.user-chat__group--num{
+  margin-left: 5px;
+  color: var(--gray-color);
+  font-weight: 500;
+}
+
+.user-chat__title {
+  margin-bottom: 3px;
+  font-size: var(--font-size-regular);
+}
+
+.user-chat__content {
+  
+  font-size: var(--font-size-small);
+  color: var(--gray-color);
+  font-weight: 500;
+}
+
+.user-chat__column:last-child {
+  color: var(--gray-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-chat__time {
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Notice */
+.notice {
+  width: 15px;
+  height: 15px;
+  background-color: var(--notice-color);
+  color: var(--white-color);
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 500;
+  font-size: var(--font-size-small);
+}
