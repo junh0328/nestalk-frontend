@@ -24,10 +24,4 @@ const KakaoMain = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-KakaoMain.getInitialProps = async (context) => {
-  const { ctx, Component } = context as AppContext;
-  const pageProps = {};
-  return { pageProps };
-};
-
 export default wrapper.withRedux(KakaoMain);

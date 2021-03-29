@@ -39,4 +39,7 @@ export const roomListFailure = (error: string): RoomListFailure => ({
 });
 
 //RomeList type
-export type RoomList = RoomListRequest | RoomListSuccess | RoomListFailure;
+export type RoomList =
+  | ReturnType<typeof roomListRequest>
+  | ReturnType<typeof roomListSuccess>
+  | ReturnType<typeof roomListFailure>;

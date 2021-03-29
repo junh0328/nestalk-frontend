@@ -17,7 +17,7 @@ export const dumyRoomList = [
     participant: [1, 2],
     last_chat: '확인 바랍니다',
     not_read_chat: 3,
-    updatedAt: new Date(),
+    updatedAt: new Date().toString(),
   },
   {
     room_id: 2,
@@ -26,7 +26,7 @@ export const dumyRoomList = [
     participant: [1, 3, 4],
     last_chat: '테스트 입니다',
     not_read_chat: 1,
-    updatedAt: new Date(),
+    updatedAt: new Date().toString(),
   },
 ];
 
