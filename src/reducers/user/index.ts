@@ -1,6 +1,7 @@
 import produce from 'immer';
 
 import { SignIn, SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE } from './signin';
+import { SignUp, SIGNUP_FAILURE, SIGNUP_REQUEST, SIGNUP_SUCCESS } from './singup';
 
 export interface UserInfo {
   id: number;
@@ -18,7 +19,7 @@ const initialState: UserInitialState = {
   info: null,
 };
 
-type ReducerAction = SignIn;
+type ReducerAction = SignIn | SignUp;
 
 //모든 user 상태 처리
 const user = (state: UserInitialState = initialState, action: ReducerAction) =>
@@ -28,6 +29,15 @@ const user = (state: UserInitialState = initialState, action: ReducerAction) =>
         draft.info = null;
         break;
 
+      case SIGNUP_REQUEST:
+        draft.info = null;
+        break;
+      case SIGNUP_SUCCESS:
+        draft.info = null;
+        break;
+      case SIGNUP_FAILURE:
+        draft.info = null;
+        break;
       default:
         break;
     }

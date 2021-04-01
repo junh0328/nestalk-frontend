@@ -1,8 +1,11 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Button, Form, Input } from 'antd';
 import styled from 'styled-components';
 import { mailJ, pwJ, nameJ, phoneJ, birthdayJ } from '@util/pattern';
 import SignupStyle from './styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@src/reducers';
+import { SIGNUP_REQUEST } from '@src/reducers/user/singup';
 
 const ErrorMessage = styled.div`
   color: red;
@@ -10,6 +13,8 @@ const ErrorMessage = styled.div`
 
 const Signup = () => {
   const style = useMemo(() => ({ width: 250, marginTop: 5, marginBottom: 5 }), []);
+  const dispatch = useDispatch();
+  const { info } = useSelector((state: RootState) => state.user);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -95,12 +100,17 @@ const Signup = () => {
 
   const onSubmit = useCallback(() => {
     if (!emailError || !passwordError || !passwordCheckError || !nameError || !birthdayError || !phoneError) {
-      alert('회원가입 성공')!;
-      // 후에 리듀서 추가
+      alert('회원가입 요청중')!;
+      dispatch({
+        type: SIGNUP_REQUEST,
+        data: { email, name, password, birthday, phone },
+      });
     } else {
       alert('에러 메세지를 확인해주세요');
     }
   }, []);
+
+  useEffect(() => {});
 
   return (
     <>
