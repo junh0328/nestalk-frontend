@@ -24,6 +24,7 @@
       "@pages/*": ["src/components/pages/*"],
       "@frames/*": ["src/components/frames/*"],
       "@types/*": ["src/types/*"],
+      "@util/*": ["src/util/*"],
     }
   },
   "exclude": ["node_modules"],
