@@ -413,12 +413,64 @@ label::before {
 /* 채팅창 > 더보기 > 채팅방 설정 버튼 클릭 시  */
 
 /* 채팅창 > 더보기 > 채팅방 나가기 버튼 클릭 시 (알림 팝업)  */
+.fade{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
+.notice-popup{
+  position: relative;
+  width: 250px;
+  background-color: var(--white-color);
+  border-radius: 15px;
+  text-align: center;
+  overflow: hidden;
+}
 
+.notice__text{
+  padding: 15px 0;
+  border-bottom: 1px solid var(--primary-color);
+}
 
+.notice__text strong{
+  display: block;
+  font-size: var(--font-size-large);
+  margin-bottom: var(--gap-10);
+}
 
+.close-button{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
 
+.notice__button{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;  
+}
 
+.notice__button button:first-child{
+  border-right: 1px solid var(--primary-color);
+}
+
+.notice__button button{
+  width: 50%;
+  padding: var(--gap-10);
+  transition: background-color 0.25s ease-in-out;
+
+}
+
+.notice__button button:hover{
+  background-color: var(--primary-color);
+}
 
 
 
@@ -445,12 +497,4 @@ label::before {
   display: none;
 }
 
-.add-participants {
-  display: block;
-}
 
-.add-participants .search{
-  /* display: none; */
-  /* 활성화 시킬때 block 아니고 flex로 해야함 */
-  display: flex;
-}
