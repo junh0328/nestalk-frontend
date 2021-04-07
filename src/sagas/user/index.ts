@@ -1,6 +1,6 @@
-import { all, fork } from 'redux-saga/effects';
+import { all } from 'redux-saga/effects';
+import authSaga from './signIn';
 
-//user redux middleware
 export default function* userSaga() {
-  yield all([]);
+  yield all([authSaga()]);
 }
