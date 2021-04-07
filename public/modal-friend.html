@@ -15,51 +15,32 @@
     </head>
 
     <body>
+        <!-- 채팅목록 > 검색 버튼 클릭 시 -->
+            <form action="#" method="GET" class="round search">
+                <div class="search-header__column">
+                    <input class="search__input" type="text">
+                    <img src="./image/icon/search-24px.svg" alt="search image">
+                </div>
+                <div class="search-header__column">
+                    <button type="button" class="item button-close">
+                        <img src="./image/icon/close-24px.svg" alt="close image">
+                    </button>
+                </div>
+            </form>
+            
+
         <!-- 친구목록 > 친구추가 클릭시 팝업-->
         <section class="modal-add-friend modal-container">
 
             <div class="top">
                 <h2>친구 추가</h2>
-
                 <!-- 닫기 -->
                 <button type="button" class="item button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
             </div>
 
             <!-- 친구추가 > 탭메뉴 -->
             <div class="tap-menu">
-                <button class="button-add-friend-phone active">연락처로 추가</button>
-                <button class="button-add-friend-id">ID로 추가</button>
-            </div>
-
-            <!-- 친구추가 > 탭메뉴:연락처로 추가 클릭시 팝업-->
-            <div class="add-friend-phone">
-                <form action="#">
-                    <fieldset>
-                        <input class="friend-name" type="text" placeholder="친구 이름">
-
-                        <div class="friend-phone-wrap">
-                            <select name="International-number">
-                                <option value="ko">+82</option>
-                                <option value="jp">+81</option>
-                            </select>
-                            <input type="text" placeholder="전화번호">
-                        </div>
-                        <p class="notice">-없이 숫자만 입력해 주세요.</p>
-                    </fieldset>
-                </form>
-
-                <!-- 확인 -->
-                <button type="button" class="button-check">확인</button>
-            </div>
-
-            <!-- 친구추가 > 연락처로 추가 > 유효성 메세지:true/false 값에 따라 표기-->
-            <div class="add-friend-phone-final-message">
-                <p class="true">친구 등록이 완료되었습니다.</p>
-                <p class="false">등록된 정보가 없습니다.<br>
-                    입력하신 정보를 다시 한 번 확인해주세요.</p>
-
-                <!-- 확인 -->
-                <button type="button" class="button-final-message-check">확인</button>
+                <button class="button-add-friend-id active">ID로 추가</button>
             </div>
 
             <!-- 친구추가 > 탭메뉴:ID로 추가 클릭시 팝업-->
@@ -74,20 +55,25 @@
             </div>
 
             <!-- 친구추가 > ID로 추가 > 유효성 메세지:true/false 값에 따라 표기-->
-            <div class="add-friend-id-final-message">
-                <p class="true">친구 등록이 완료되었습니다.</p>
-                <p class="false">등록된 정보가 없습니다.
-                    <br>
-                    ID를 다시 확인해주세요.
-                </p>
+            <div class="fade">
+                <div class="notice-popup">
+                    <div class="notice__text">
+                        <p class="true">친구 등록이 완료되었습니다.</p>
+                        <p class="false">등록된 정보가 없습니다.
+                            <br>
+                            ID를 다시 확인해주세요.
+                        </p>
+                    </div>
+                    <div class="notice__button">
 
-                <!-- 확인 -->
-                <button type="button" class="button-final-message-check">확인</button>
+                        <!-- 확인 -->
+                        <button type="submit">확인</button>
+                    </div>
+                </div>
             </div>
 
         </section>
 
-        
         <section class="modal-profile">
 
             <!-- 친구목록 > 내 프로필 클릭시 팝업-->
@@ -142,7 +128,7 @@
 
                         <!-- 이름/프로필 메세지 -->
                         <ul class="text">
-                            <li class="name">name</li>
+                            <button type="button" class="button-edit-name">name<img src="./image/icon/white_edit-24px.svg" alt="이름 수정"></button>
                             <li class="profile-message">message</li>
                         </ul>
                     </div>
@@ -153,6 +139,28 @@
                             <img src="./image/icon/white_chat_bubble-24px.svg" alt="아이콘"><br>1:1 채팅
                         </button>
                     </div>
+                </div>
+
+                <!-- 친구 프로필 > 이름편집 클릭시 팝업 -->
+                <div class="modal-edit-friend-name modal-container">
+
+                    <div class="top">
+                        <!-- 닫기 -->
+                        <button type="button" class="item button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    </div>
+
+                    <!-- 이름편집 -->
+                    <form action="#" class="edit-text">
+                        <fieldset>
+                            <input type="text" class="edit-name" placeholder="name">
+                        </fieldset>
+                    </form>
+
+                    <button type="button" class="button-done"><img src="./image/icon/done-24px.svg" alt=""></button>
+
+                    <h4>친구가 설정한 이름</h4>
+                    <p class="default-name">default-name</p>
+
                 </div>
             </div>
 
@@ -179,7 +187,6 @@
             </div>
 
         </section>
-
 
         <!-- 내 프로필 > 프로필 편집 클릭시 팝업 -->
         <section class="modal-setting">
@@ -217,7 +224,6 @@
             </div>
 
         </section>
-
 
         <!-- 내 프로필 > 설정 > 프로필 클릭시 팝업 -->
         <section class="modal-edit-my-profile modal-container">

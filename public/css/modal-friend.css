@@ -12,9 +12,9 @@ body {
 
 .modal-container {
     min-width: 300px;
-    max-width: 650px;
-    margin: 0 auto;
+    max-width: 750px;
     padding: var(--gap-10);
+    margin: 0 auto;
 }
 
 section {
@@ -52,6 +52,56 @@ button img {
     right: 10px;
 }
 
+/* 채팅목록 > 검색 버튼 클릭 시 */
+.chat-input,
+.modal-header,
+.search {
+    width: 100%;
+    height: 65px;
+    padding: var(--gap-10);
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search.round {
+    top: 0;
+}
+
+.search-header__column:first-child img {
+    width: 20px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-header__column:first-child {
+    flex: 1;
+    margin-right: var(--gap-10);
+}
+
+.search__input {
+    width: 100%;
+    height: 30px;
+    padding: 0 var(--gap-10);
+    background-color: var(--primary-color);
+}
+
+.round .search__input {
+    position: relative;
+    padding-left: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+}
+
+.search-header__column button {
+    vertical-align: middle;
+}
+
 /* 친구추가 영역 */
 /* 모달 친구추가 */
 .modal-add-friend {
@@ -79,83 +129,83 @@ button img {
 }
 
 /* 전화번호로 추가 & ID로 추가 */
-.add-friend-id,
-.add-friend-phone {
+.add-friend-id {
     padding-top: var(--gap-20);
-}
-
-.friend-phone-wrap {
-    display: flex;
-    border-bottom: 1px solid var(--black-color);
-}
-
-.friend-phone-wrap select {
-    width: 20%;
-}
-
-.friend-phone-wrap input {
-    border: none;
-}
-
-.notice {
-    padding-top: var(--gap-5);
-    padding-bottom: var(--gap-20);
-    color: var(--gray-color);
 }
 
 /* 친구추가 > 유효성 메세지 */
-.add-friend-id-final-message,
-.add-friend-phone-final-message {
-    width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    padding-top: var(--gap-20);
+.fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.notice-popup {
+    position: relative;
+    width: 250px;
     background-color: var(--white-color);
     border-radius: 15px;
     text-align: center;
+    overflow: hidden;
 }
 
-.add-friend-id-final-message p,
-.add-friend-phone-final-message p {
-    padding-bottom: var(--gap-20);
+.notice__text {
+    padding: 15px 0;
     border-bottom: 1px solid var(--primary-color);
 }
 
-.add-friend-id-final-message button,
-.add-friend-phone-final-message button {
-    width: 100%;
-    font-size: var(--font-size-regular);
-    padding-top: var(--gap-5);
-    padding-bottom: var(--gap-10);
-    background-color: none;
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 
+.notice__button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.notice__button button:first-child {
+    border-right: 1px solid var(--primary-color);
+}
+
+.notice__button button {
+    width: 100%;
+    padding: var(--gap-10);
+    transition: background-color 0.25s ease-in-out;
+}
+
+.notice__button button:hover {
+    background-color: var(--primary-color);
+}
 
 /* 숨김처리 */
+.search {
+    display: none;
+}
 .modal-add-friend {
     /* display: none; */
 }
-.add-friend-phone {
+.add-friend-id {
     /* display: none; */
 }
-.add-friend-phone-final-message {
+.fade,
+.notice-popup {
+    /* display: none; */
+}
+.notice-popup .true {
     display: none;
 }
-.add-friend-phone-final-message .true {
-    display: none;
+.notice-popup .false {
+    /* display: none; */
 }
-.add-friend-id {
-    display: none;
-}
-.add-friend-id-final-message {
-    display: none;
-}
-.add-friend-id-final-message .false {
-    display: none;
-}
-
 
 /* 프로필 영역 */
 /* 모달 프로필 */
@@ -197,8 +247,8 @@ button img {
     height: 100%;
 }
 
-.button-edit-wrap,
-.button-direct-chat-wrap {
+.button-direct-chat-wrap,
+.button-edit-wrap {
     width: 100%;
     text-align: center;
     position: absolute;
@@ -209,9 +259,67 @@ button img {
     border-top: 1px solid var(--white-color);
 }
 
-.button-edit,
-.button-direct-chat {
+.button-direct-chat,
+.button-edit {
     padding: var(--gap-10);
+}
+
+.button-edit-name {
+    text-indent: 5px;
+}
+
+.button-edit-name img {
+    margin-left: var(--gap-5);
+}
+
+/* 모달 친구이름 편집 */
+.modal-edit-friend-name {
+    width: 100%;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    padding-bottom: var(--gap-20);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    bottom: 170px;
+    left: 0;
+}
+
+.modal-edit-friend-name .top button {
+    margin-left: auto;
+}
+
+.modal-edit-friend-name .edit-text {
+    width: 100%;
+    top: 40px;
+    padding: 0 10px;
+}
+
+.modal-edit-friend-name .button-done {
+    padding: 5px 5px 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.modal-edit-friend-name .button-done img {
+    width: 15px;
+    height: 15px;
+}
+
+.modal-edit-friend-name .button-done:hover {
+    background-color: var(--secondary-color);
+}
+
+.modal-edit-friend-name h4 {
+    padding: 30px 0 10px;
+}
+
+.default-name {
+    background-color: #eee;
+    padding: var(--gap-5);
+    color: var(--gray-color);
 }
 
 /* 모달 배경이미지 & 프로필이미지 */
@@ -398,12 +506,11 @@ button img {
     transform: translateX(-110%);
 }
 
-
 /* 숨김처리 */
-.modal-friend-profile {
+.modal-my-profile {
     display: none;
 }
-.modal-my-profile {
+.modal-friend-profile {
     display: none;
 }
 .modal-background-view {
@@ -422,5 +529,8 @@ button img {
     display: none;
 }
 .modal-edit-background {
+    display: none;
+}
+.modal-edit-friend-name {
     display: none;
 }
