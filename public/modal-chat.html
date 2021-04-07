@@ -14,7 +14,7 @@
 
 <body>
   <!-- 채팅목록 > 검색 버튼 클릭 시  -->
-  <form action="#" method="GET" class="round search">
+  <form action="#" method="GET" class="round search container">
     <div class="search-header__column">
       <input class="search__input" type="text" placeholder="채팅방, 참여자 검색">
       <img src="./image/icon/search-24px.svg" alt="search image">
@@ -28,7 +28,7 @@
 
   <!-- 채팅목록 > 새로운 채팅 버튼 클릭 시(대화상대 선택)  -->
   <!-- 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대)-->
-  <section class="add-participants">
+  <section class="add-participants container">
     <div class="modal-header">
       <h3 class="modal-header__title">대화상대 선택</h3>
       <!-- <h3 class="modal-header__title">대화상대 초대</h3> -->
@@ -90,7 +90,7 @@
       </div>
     </form>
 
-    <div class="modal-button">
+    <div class="modal-button container">
       <button type="submit">확인</button>
       <button type="reset">취소</button>
     </div>
@@ -98,7 +98,6 @@
     <button class="close-button" type="reset"><img src="./image/icon/close-24px.svg" alt="close button">
     </button>
   </section>
-
 
   <!-- 채팅창(새 창)  -->
   <section class="chatting-room container">
@@ -184,6 +183,23 @@
   </section>
 
   <!-- 채팅창 > 더보기 > 채팅방 설정 버튼 클릭 시 -->
+  <section class="chat-setting container">
+    <div class="modal-header">
+      <h3 class="modal-header__title">채팅방 설정</h3>
+    </div>
+    <div class="chat-info">
+      <div class="chat-setting-photo">
+        <img src="./image/icon/user-620px.png" alt="chat profile photo">
+      </div>
+      <input type="text" value="Chatting room name" required>
+    </div>
+    <div class="modal-button container">
+      <button type="submit">확인</button>
+      <button type="reset">취소</button>
+    </div>
+    <button class="close-button" type="reset"><img src="./image/icon/close-24px.svg" alt="close button">
+    </button>
+  </section>
 
   <!-- 채팅창 > 더보기 > 채팅방 나가기 버튼 클릭 시 (알림 팝업)-->
   <section class="fade">
@@ -197,8 +213,6 @@
         <button type="submit">확인</button>
         <button type="reset">취소</button>
       </div>
-      <button class="close-button" type="reset"><img src="./image/icon/close-24px.svg" alt="close button">
-      </button>
     </div>
   </section>
 

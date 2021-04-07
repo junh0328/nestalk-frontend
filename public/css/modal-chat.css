@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /* Basic setting */
 body {
   min-width: 320px;
@@ -82,6 +84,7 @@ input{
 
 
 /* 채팅목록 > 새로운 채팅 버튼 클릭 시(대화상대 선택) */
+/* 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대) */
 .add-participants {
 	position: relative;
 }
@@ -90,7 +93,7 @@ input{
   background-color: var(--primary-color);
 }
 
-.add-participants .modal-header__title {
+.modal-header__title {
 	font-size: var(--font-size-large);
 }
 
@@ -141,7 +144,7 @@ input{
 .friends-item {
 	display: flex;
 	align-items: center;
-	padding: 5px 0;
+	padding:  var(--gap-5) 0;
 }
 
 .friends-item__photo {
@@ -174,7 +177,7 @@ input[type="checkbox"] {
 	font-size: var(--font-size-regular);
 }
 
-label::before {
+.friends-item__name label::before {
 	content: "";
 	width: 20px;
 	height: 20px;
@@ -219,16 +222,15 @@ label::before {
   background-color: var(--secondary-color);
 }
 
-.add-participants .close-button{
+.add-participants .close-button,
+.chat-setting .close-button{
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-/* 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대) */
-
 /* 채팅창(새 창) */
-.modal-header{
+.chatting-room .modal-header{
   background-color: var(--secondary-color);
 }
 
@@ -241,7 +243,7 @@ label::before {
   margin-right:var(--gap-10) ;
 }
 
-.modal-header__title{
+.chatting-room .modal-header__title{
   font-size: var(--font-size-regular);
 }
 
@@ -279,7 +281,7 @@ label::before {
 .chat__date {
   color: var(--gray-color);
   background-color: var(--secondary-color);
-  padding: 5px 8px;
+  padding:  var(--gap-5) 8px;
   border-radius: 25px;
   margin-bottom: 20px;
 }
@@ -317,7 +319,7 @@ label::before {
 
 .chat__bubble {
   background-color: var(--white-color);
-  padding: 5px var(--gap-10);
+  padding:  var(--gap-5) var(--gap-10);
   font-size: var(--font-size-regular);
   border-radius: 15px;
   border-top-left-radius: 0px;
@@ -410,7 +412,29 @@ label::before {
 .more-chatting-room button:hover{
   background-color: var(--primary-color);
 }
+
 /* 채팅창 > 더보기 > 채팅방 설정 버튼 클릭 시  */
+.chat-info{
+  padding: var(--gap-10);
+}
+.chat-setting-photo{
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 40px;
+}
+
+.chat-setting-photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 40%;
+}
+
+.chat-info input{
+  width: 100%;
+  font-size: var(--font-size-regular);
+  border-bottom: 2px solid var(--secondary-color);
+  padding: var(--gap-5);
+}
 
 /* 채팅창 > 더보기 > 채팅방 나가기 버튼 클릭 시 (알림 팝업)  */
 .fade{
@@ -445,16 +469,15 @@ label::before {
   margin-bottom: var(--gap-10);
 }
 
-.close-button{
-  position: absolute;
-  top: 5px;
-  right: 5px;
+.notice__text p{
+  font-size: var(--font-size-regular);
 }
 
 .notice__button{
   display: flex;
   justify-content: space-around;
-  align-items: center;  
+  align-items: center;
+  font-size: var(--font-size-regular);
 }
 
 .notice__button button:first-child{
@@ -477,19 +500,29 @@ label::before {
 
 
 /* modal display : none */
-.chatting-room{
+.round.search{
+  display: none;
+   /* 활성화 시킬때 block 아니고 flex로 해야함 */
+  /* display: flex; */
+}
+
+.add-participants {
   display: none;
 }
 
-.square{
+.add-participants .search{
   display: none;
   /* 활성화 시킬때 block 아니고 flex로 해야함 */
   /* display: flex; */
 }
 
-.round.search{
+.chatting-room{
   display: none;
-   /* 활성화 시킬때 block 아니고 flex로 해야함 */
+}
+
+.square.search{
+  display: none;
+  /* 활성화 시킬때 block 아니고 flex로 해야함 */
   /* display: flex; */
 }
 
@@ -497,4 +530,12 @@ label::before {
   display: none;
 }
 
+.chat-setting{
+  display: none;
+}  
 
+.fade{
+  display: none;
+  /* 활성화 시킬때 block 아니고 flex로 해야함 */
+  /* display: flex; */
+}
