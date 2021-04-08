@@ -11,216 +11,261 @@
             type='text/css'>
         <link rel="stylesheet" href="./css/reset.css">
         <link rel="stylesheet" href="./css/variables.css">
+        <link rel="stylesheet" href="./css/modal-friend.css">
     </head>
 
     <body>
-        <section>
-            <!-- modal -->
-            <!-- add-friend -->
-            <!-- modal-add-friend : button-add-friend click시 팝업 -->
-            <div class="modal-add-friend">
-                <div class="top">
-                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
-                    <h2>친구 추가</h2>
+        <!-- 채팅목록 > 검색 버튼 클릭 시 -->
+            <form action="#" method="GET" class="round search">
+                <div class="search-header__column">
+                    <input class="search__input" type="text">
+                    <img src="./image/icon/search-24px.svg" alt="search image">
                 </div>
+                <div class="search-header__column">
+                    <button type="button" class="item button-close">
+                        <img src="./image/icon/close-24px.svg" alt="close image">
+                    </button>
+                </div>
+            </form>
+            
 
-                <button type="button" class="button-add-friend-phone">
-                    <img src="#" alt="아이콘"><br>연락처로 추가
-                </button>
+        <!-- 친구목록 > 친구추가 클릭시 팝업-->
+        <section class="modal-add-friend modal-container">
 
-                <button type="button" class="button-add-friend-id">
-                    <img src="#" alt="아이콘"><br>ID로 추가
-                </button>
+            <div class="top">
+                <h2>친구 추가</h2>
+                <!-- 닫기 -->
+                <button type="button" class="item button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
             </div>
 
-            <!-- modal-add-friend-phone : button-add-friend-phone click시 팝업 -->
-            <div class="modal-add-friend-phone">
-                <div class="top">
-                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
-                    <h2>연락처로 추가</h2>
-                    <button type="button" class="button-check">확인</button>
-                </div>
+            <!-- 친구추가 > 탭메뉴 -->
+            <div class="tap-menu">
+                <button class="button-add-friend-id active">ID로 추가</button>
+            </div>
 
+            <!-- 친구추가 > 탭메뉴:ID로 추가 클릭시 팝업-->
+            <div class="add-friend-id">
                 <form action="#">
                     <fieldset>
-                        <input class="friend-name" type="text" value="친구 이름" onfocus="this.value=''">
-
-                        <div class="friend-phone">
-                            <select name="International-number">
-                                <option value="ko">+82</option>
-                                <option value="jp">+81</option>
-                            </select>
-                            <input type="text" value="전화번호" onfocus="this.value=''">
-                            <p>-없이 숫자만 입력해 주세요.</p>
-                        </div>
+                        <input class="friend-id" type="text" placeholder="친구 nestalk ID">
                     </fieldset>
                 </form>
+
+                <button type="button" class="item button-check">확인</button>
             </div>
 
-            <!-- modal-add-friend-phone-final : true/false 값에 따라 message 다르게 표기-->
-            <div class="modal-add-friend-phone-final">
-                <h2>연락처로 친구 추가</h2>
-                <p class="true">친구 등록이 완료되었습니다.</p>
-                <p class="false">등록된 정보가 없습니다.
-                    <br>
-                    이름 또는 전화번호를 다시 확인해주세요.</p>
-                <button type="button" class="button-check">확인</button>
-            </div>
+            <!-- 친구추가 > ID로 추가 > 유효성 메세지:true/false 값에 따라 표기-->
+            <div class="fade">
+                <div class="notice-popup">
+                    <div class="notice__text">
+                        <p class="true">친구 등록이 완료되었습니다.</p>
+                        <p class="false">등록된 정보가 없습니다.
+                            <br>
+                            ID를 다시 확인해주세요.
+                        </p>
+                    </div>
+                    <div class="notice__button">
 
-            <!-- modal-add-friend-id : button-add-friend-id click시 팝업 -->
-            <div class="modal-add-friend-id">
-                <div class="top">
-                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
-                    <h2>nestalk ID로 추가</h2>
-                    <button type="button" class="button-check">확인</button>
+                        <!-- 확인 -->
+                        <button type="submit">확인</button>
+                    </div>
                 </div>
-
-                <form action="#">
-                    <fieldset>
-                        <input
-                            class="friend-id"
-                            type="text"
-                            value="친구 nestalk ID"
-                            onfocus="this.value=''">
-                    </fieldset>
-                </form>
             </div>
 
-            <!-- modal-add-friend-id-final : true/false 값에 따라 message 다르게 표기-->
-            <div class="modal-add-friend-id-final">
-                <h2>ID로 친구 추가</h2>
-                <p class="true">친구 등록이 완료되었습니다.</p>
-                <p class="false">등록된 정보가 없습니다.
-                    <br>
-                    ID를 다시 확인해주세요.
-                </p>
-                <button type="button" class="button-check">확인</button>
-            </div>
+        </section>
 
-            <!-- profile -->
-            <!-- modal-my-profile -->
-            <!-- modal-my-profile : button-my-profile click시 팝업 -->
+        <section class="modal-profile">
+
+            <!-- 친구목록 > 내 프로필 클릭시 팝업-->
             <div class="modal-my-profile">
-                <div class="top">
-                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
-                    <button type="button" class="button-background"><img src="#" alt="배경이미지"></button>
-                  </div>
 
-                <div class="profile">
-                    <button type="button" class="button-profile"><img src="#" alt="프로필이미지"></button>
-                    <p class="name">test</p>
-                </div>
+                <!-- 배경화면 어둡게 처리 -->
+                <div class="black modal-container">
 
-                <button type="button" class="button-edit">
-                    <img src="./image/icon/edit-24px.svg" alt="아이콘"><br>프로필 편집
-                </button>
-
-                <!-- modal-background : button-background click시 팝업 -->
-                <div class="modal-background">
-                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
-                    <div class="image-box"><img src="#" alt="배경이미지"></div>
-                </div>
-
-                <!-- modal-profile : button-profile click시 팝업 -->
-                <div class="modal-profile">
-                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
-                    <div class="image-box"><img src="#" alt="프로필이미지"></div>
-                </div>
-
-                <!-- modal-edit : button-edit click시 팝업 -->
-                <div class="modal-adit">
                     <div class="top">
-                        <button type="button" class="button-cancel">취소</button>
-                        <button type="button" class="button-finish">완료</button>
+                        <!-- 배경화면 보기 -->
+                        <button type="button" class="item button-background"><img src="./image/icon/white_photo-24px.svg" alt="배경이미지"></button>
+                        <!-- 닫기 -->
+                        <button type="button" class="item button-close"><img src="./image/icon/white_close-24px.svg" alt="닫기"></button>
                     </div>
 
-                    <button type="button" class="button-adit-profile"><img src="./image/icon/local_see-24px.svg" alt="프로필 수정"></button>
-                    <button type="button" class="button-adit-name"><img src="./image/icon/edit-24px.svg" alt="이름 수정"></button>
-                    <button type="button" class="button-adit-message"><img src="./image/icon/edit-24px.svg" alt="상태메세지 수정"></button>
-                    <button type="button" class="button-adit-background"><img src="./image/icon/local_see-24px.svg" alt="배경화면 수정"></button>
-                </div>
+                    <div class="profile">
+                        <!-- 프로필 보기 -->
+                        <button type="button" class="button-profile"><img src="./image/icon/user-620px.png" alt="프로필이미지"></button>
 
-                <!-- modal-edit-profile : button-adit-profile click시 팝업 -->
-                <div class="modal-edit-profile"></div>
-
-                <!-- modal-edit-name : button-adit-name click시 팝업 -->
-                <div class="modal-edit-name">
-                    <div class="top">
-                        <button type="button" class="button-cancel">취소</button>
-                        <h2>이름</h2>
-                        <button type="button" class="button-finish">완료</button>
+                        <!-- 이름/프로필 메세지 -->
+                        <ul class="text">
+                            <li class="name">name</li>
+                            <li class="profile-message">message</li>
+                        </ul>
                     </div>
 
-                    <form action="#">
-                        <fieldset>
-                            <input class="name" type="text" value="#">
-                        </fieldset>
-                    </form>
-                </div>
-
-                <!-- modal-edit-message : button-adit-message click시 팝업 -->
-                <div class="modal-edit-message">
-                    <div class="top">
-                        <button type="button" class="button-cancel">취소</button>
-                        <h2>상태메세지</h2>
-                        <button type="button" class="button-finish">완료</button>
+                    <div class="button-edit-wrap">
+                        <!-- 프로필 편집 -->
+                        <button type="button" class="button-edit">
+                            <img src="./image/icon/white_edit-24px.svg" alt="아이콘"><br>프로필 편집
+                        </button>
                     </div>
-
-                    <form action="#">
-                        <fieldset>
-                            <input class="name" type="text" value="#">
-                        </fieldset>
-                    </form>
                 </div>
-
-                <!-- modal-edit-background : button-adit-backgrounde click시 팝업 -->
-                <div class="modal-edit-background"></div>
             </div>
 
-            <!-- modal-friend-profile -->
-            <!-- modal-friend-profile : button-friend-profile click시 팝업 -->
+            <!-- 친구목록 > 친구 프로필 클릭시 팝업-->
             <div class="modal-friend-profile">
-                <div class="top">
-                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
-                    <button type="button" class="button-background"><img src="#" alt="배경이미지"></button>
-                </div>
 
-                <div class="profile">
-                    <button type="button" class="button-profile"><img src="#" alt="프로필이미지"></button>
-                    <p class="name">test</p><button type="button" class="button-adit-name"><img src="./image/icon/edit-24px.svg" alt="프로필이미지"></button>
-                </div>
+                <!-- 배경화면 어둡게 처리 -->
+                <div class="black modal-container">
 
-                <button type="button" class="button-chat">
-                    <img src="./image/icon/chat_bubble-24px.svg" alt="아이콘"><br>1:1 채팅
-                </button>
-
-                <!-- modal-background : button-background click시 팝업 -->
-                <div class="modal-background">
-                    <button type="button" class="button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
-                    <div class="image-box"><img src="#" alt="배경이미지"></div>
-                </div>
-
-                <!-- modal-profile : button-profile click시 팝업 -->
-                <div class="modal-profile">
-                    <button type="button" class="button-close"><img src="#" alt="닫기"></button>
-                    <div class="image-box"><img src="#" alt="프로필이미지"></div>
-                </div>
-
-                <!-- modal-edit-name : button-adit-name click시 팝업 -->
-                <div class="modal-edit-name">
                     <div class="top">
-                        <button type="button" class="button-cancel">취소</button>
-                        <h2>이름</h2>
-                        <button type="button" class="button-finish">완료</button>
+                        <!-- 배경화면 보기 -->
+                        <button type="button" class="item button-background"><img src="./image/icon/white_photo-24px.svg" alt="배경이미지"></button>
+                        <!-- 닫기 -->
+                        <button type="button" class="item button-close"><img src="./image/icon/white_close-24px.svg" alt="닫기"></button>
                     </div>
 
-                    <form action="#">
+                    <div class="profile">
+                        <!-- 프로필 보기 -->
+                        <button type="button" class="button-profile"><img src="./image/icon/user-620px.png" alt="프로필이미지"></button>
+
+                        <!-- 이름/프로필 메세지 -->
+                        <ul class="text">
+                            <button type="button" class="button-edit-name">name<img src="./image/icon/white_edit-24px.svg" alt="이름 수정"></button>
+                            <li class="profile-message">message</li>
+                        </ul>
+                    </div>
+
+                    <div class="button-direct-chat-wrap">
+                        <!-- 1:1 채팅 -->
+                        <button type="button" class="button-direct-chat">
+                            <img src="./image/icon/white_chat_bubble-24px.svg" alt="아이콘"><br>1:1 채팅
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 친구 프로필 > 이름편집 클릭시 팝업 -->
+                <div class="modal-edit-friend-name modal-container">
+
+                    <div class="top">
+                        <!-- 닫기 -->
+                        <button type="button" class="item button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                    </div>
+
+                    <!-- 이름편집 -->
+                    <form action="#" class="edit-text">
                         <fieldset>
-                            <input class="name" type="text" value="#">
+                            <input type="text" class="edit-name" placeholder="name">
                         </fieldset>
                     </form>
+
+                    <button type="button" class="button-done"><img src="./image/icon/done-24px.svg" alt=""></button>
+
+                    <h4>친구가 설정한 이름</h4>
+                    <p class="default-name">default-name</p>
+
                 </div>
             </div>
+
+            <!-- 내 프로필 > 배경화면 보기 클릭시 팝업 -->
+            <div class="modal-background-view">
+
+                <div class="top">
+                    <!-- 닫기 -->
+                    <button type="button" class="item button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                </div>
+
+                <div class="image-box"><img src="#" alt="배경이미지"></div>
+            </div>
+
+            <!-- 내 프로필 > 프로필 보기 클릭시 팝업 -->
+            <div class="modal-profile-view">
+
+                <div class="top">
+                    <!-- 닫기 -->
+                    <button type="button" class="item button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+                </div>
+
+                <div class="image-box"><img src="#" alt="프로필이미지"></div>
+            </div>
+
+        </section>
+
+        <!-- 내 프로필 > 프로필 편집 클릭시 팝업 -->
+        <section class="modal-setting">
+
+            <div class="top">
+                <h2>설정</h2>
+                <!-- 닫기 -->
+                <button type="button" class="item button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+            </div>
+
+            <div class="setting-tap">
+                <!-- 설정 > 탭메뉴 -->
+                <ul class="setting-tap-menu">
+                    <li class="active">프로필</li>
+                </ul>
+
+                <!-- 프로필 탭메뉴 클릭시 팝업 -->
+                <div class="edit-my-profile item">
+                    <h2>기본프로필 관리</h2>
+
+                    <div class="setting-profile">
+                        <!-- 프로필 이미지 -->
+                        <div class="profile-box"><img src="./image/icon/user-620px.png" alt="프로필이미지"></div>
+
+                        <!-- 이름/프로필 메세지 -->
+                        <ul class="text item">
+                            <li class="name">name</li>
+                            <li class="profile-message">message</li>
+                        </ul>
+
+                        <!-- 편집 -->
+                        <button type="button" class="button-edit item">편집</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 내 프로필 > 설정 > 프로필 클릭시 팝업 -->
+        <section class="modal-edit-my-profile modal-container">
+
+            <div class="top">
+                <h2>기본프로필 관리</h2>
+                <!-- 닫기 -->
+                <button type="button" class="item button-close"><img src="./image/icon/close-24px.svg" alt="닫기"></button>
+            </div>
+
+            <!-- 프로필 이미지 -->
+            <div class="profile-box"><img src="./image/icon/user-620px.png" alt="프로필이미지"></div>
+
+            <!-- 프로필 편집 -->
+            <button type="button" class="button-edit-profile"><img src="./image/icon/local_see-24px.svg" alt="프로필 수정"></button>
+
+            <!-- 이름/프로필 메세지 편집 -->
+            <form action="#" class="edit-text">
+                <fieldset>
+                    <input type="text" class="edit-name" placeholder="name">
+                    <input type="text" class="edit-message" placeholder="message">
+                </fieldset>
+            </form>
+
+            <!-- 배경이미지 편집 -->
+            <button type="button" class="button-edit-background"><img src="./image/icon/photo-24px.svg" alt="배경화면 수정"></button>
+
+            <!-- 확인 -->
+            <button type="button" class="button-check">확인</button>
+
+            <!-- 프로필 편집 클릭시 팝업 -->
+            <div class="modal-edit-profile">
+                <button type="button" class="button-edit-profile-photo">사진 변경</button>
+                <button type="button" class="button-edit-profile-default">기본 이미지로 변경</button>
+            </div>
+
+            <!-- 배경이미지 편집 클릭시 팝업-->
+            <div class="modal-edit-background">
+                <button type="button" class="button-edit-profile-photo">사진 변경</button>
+                <button type="button" class="button-edit-profile-default">기본 이미지로 변경</button>
+            </div>
+
         </section>
     </body>
 </html>

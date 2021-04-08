@@ -14,20 +14,208 @@
 
 <body>
   <!-- 채팅목록 > 검색 버튼 클릭 시  -->
+  <form action="#" method="GET" class="round search container">
+    <div class="search-header__column">
+      <input class="search__input" type="text" placeholder="채팅방, 참여자 검색">
+      <img src="./image/icon/search-24px.svg" alt="search image">
+    </div>
+    <div class="search-header__column">
+      <button type="button">
+        <img src="./image/icon/close-24px.svg" alt="close image" />
+      </button>
+    </div>
+  </form>
 
   <!-- 채팅목록 > 새로운 채팅 버튼 클릭 시(대화상대 선택)  -->
-
   <!-- 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대)-->
+  <section class="add-participants container">
+    <div class="modal-header">
+      <h3 class="modal-header__title">대화상대 선택</h3>
+      <!-- <h3 class="modal-header__title">대화상대 초대</h3> -->
+    </div>
+
+
+    <!-- 선택한 친구 표시 -->
+    <div class="check-friends">
+      <button class="check-friend__item">
+        <span>Friend</span>
+        <img src="./image/icon/close-24px.svg" alt="close image" />
+      </button>
+      <button class="check-friend__item">
+        <span>Friend</span>
+        <img src="./image/icon/close-24px.svg" alt="close image" />
+      </button>
+    </div>
+
+    <!-- 친구 검색 -->
+    <form action="#" method="GET" class="round search">
+      <div class="search-header__column">
+        <input class="search__input" type="text" placeholder="채팅방, 참여자 검색">
+        <img src="./image/icon/search-24px.svg" alt="search image">
+      </div>
+      <div class="search-header__column">
+        <button type="button">
+          <img src="./image/icon/close-24px.svg" alt="close image" />
+        </button>
+      </div>
+    </form>
+
+    <!-- 친구리스트 -->
+    <form action="#">
+      <div class="friends-list-section">
+        <h4 class="friends-list__title">친구</h4>
+        <ul class="friends-list">
+          <li class="friends-item">
+            <div class="friends-item__photo">
+              <img src="./image/icon/user-620px.png" alt="friend profile photo">
+            </div>
+            <!-- click 시  check-friends로 해당 프로필 이동 -->
+            <div class="friends-item__name">
+              <label for="name">Friend</label>
+              <input type="checkbox" id="name" checked />
+            </div>
+          </li>
+          <!-- click on -->
+          <li class="friends-item active">
+            <div class="friends-item__photo">
+              <img src="./image/icon/user-620px.png" alt="friend profile photo">
+            </div>
+            <!-- click 시  check-friends로 해당 프로필 이동 -->
+            <div class="friends-item__name">
+              <label for="name2">Friend</label>
+              <input type="checkbox" id="name2" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </form>
+
+    <div class="modal-button container">
+      <button type="submit">확인</button>
+      <button type="reset">취소</button>
+    </div>
+
+    <button class="close-button" type="reset"><img src="./image/icon/close-24px.svg" alt="close button">
+    </button>
+  </section>
 
   <!-- 채팅창(새 창)  -->
+  <section class="chatting-room container">
+    <div class="modal-header">
+      <div class="modal-header__column">
+        <button type="button" class="chatting-room__thumbnail">
+          <img src="./image/icon/user-620px.png" alt="friend profile photo" />
+        </button>
+        <h1 class="modal-header__title">Friend</h1>
+      </div>
 
-  <!-- 채팅창 > 검색 버튼 클릭 시 -->
+      <div class="modal-header__column">
+        <button type="button">
+          <img src="./image/icon/search-24px.svg" alt="search button" />
+        </button>
+        <button type="button">
+          <img src="./image/icon/menu-24px.svg" alt="more button" />
+        </button>
+      </div>
+    </div>
 
-  <!-- 채팅창 > 더보기 버튼 클릭 시 -->
+    <!-- 채팅창 > 검색 버튼 클릭 시 -->
+    <form action="#" method="GET" class="square search">
+      <div class="search-header__column">
+        <input class="search__input" type="text" placeholder="검색 내용을 입력해주세요.">
+      </div>
+      <div class="search-header__column">
+        <button type="button">
+          <img src="./image/icon/close-24px.svg" alt="close image" />
+        </button>
+      </div>
+    </form>
+
+    <div class="chatting-section container">
+      <div class="chat__date">2021년 3월 13일 토요일
+      </div>
+      <div class="chat-section-row">
+        <button class="chat-section-row__photo">
+          <img src="./image/icon/user-620px.png" alt="friend profile photo" />
+        </button>
+        <div class="chat-section-row__content">
+          <span class="chat-section__name">Friend</span>
+          <div class="chat-section__talk">
+            <span class="chat__bubble">Hello</span>
+            <span class="chat__time">12:20</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-section-row message-row--own">
+        <div class="chat-section-row__content">
+          <div class="chat-section__talk chat-section--send">
+            <span class="chat__bubble">Hello!</span>
+            <span class="chat__time"> 12:25</span>
+          </div>
+        </div>
+      </div>
+      <form action="#" method="POST" class="chat-input">
+        <div class="chat-input__column">
+          <label for="import-file">
+            <img src="./image/icon/add_circle_outline-24px.svg" alt="
+          import file button" />
+          </label>
+          <input type="file" id="import-file" multiple></input>
+        </div>
+        <div class="chat-input__column">
+          <textarea required></textarea>
+        </div>
+        <div class="chat-input__column">
+          <button type="submit" name="typing mege">
+            <img src="./image/icon/arrow_upward-24px.svg" alt="send a chat button" />
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 채팅창 > 메뉴(더보기) 버튼 클릭 시 -->
+  <section class="more-chatting-room">
+    <button type="button">대화상대 초대</button>
+    <button type="button">채팅방 설정</button>
+    <button type="button">채팅방 나가기</button>
+    <button type="button">창 닫기</button>
+  </section>
 
   <!-- 채팅창 > 더보기 > 채팅방 설정 버튼 클릭 시 -->
+  <section class="chat-setting container">
+    <div class="modal-header">
+      <h3 class="modal-header__title">채팅방 설정</h3>
+    </div>
+    <div class="chat-info">
+      <div class="chat-setting-photo">
+        <img src="./image/icon/user-620px.png" alt="chat profile photo">
+      </div>
+      <input type="text" value="Chatting room name" required>
+    </div>
+    <div class="modal-button container">
+      <button type="submit">확인</button>
+      <button type="reset">취소</button>
+    </div>
+    <button class="close-button" type="reset"><img src="./image/icon/close-24px.svg" alt="close button">
+    </button>
+  </section>
 
   <!-- 채팅창 > 더보기 > 채팅방 나가기 버튼 클릭 시 (알림 팝업)-->
+  <section class="fade">
+    <div class="notice-popup">
+      <div class="notice__text">
+        <strong>채팅방에서 나가시겠습니까?</strong>
+        <p>채팅방을 나가면 대화내용이 모두 삭제되고<br>
+          모바일 카카오톡에서도 채팅방이 삭제됩니다.</p>
+      </div>
+      <div class="notice__button">
+        <button type="submit">확인</button>
+        <button type="reset">취소</button>
+      </div>
+    </div>
+  </section>
+
 
 </body>
 

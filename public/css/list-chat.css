@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 body {
   min-width: 320px;
   max-width: 720px;
@@ -119,7 +121,7 @@ body {
 }
 
 .user-chat__group--3 .group:first-child{
-  top: 5px;
+  top: var(--gap-5);
 }
 .user-chat__group--3 .group:last-child{
   top: 20px;
@@ -160,7 +162,7 @@ body {
 }
 
 .user-chat__group--num{
-  margin-left: 5px;
+  margin-left:  var(--gap-5);
   color: var(--gray-color);
   font-weight: 500;
 }

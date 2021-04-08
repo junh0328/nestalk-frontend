@@ -1,7 +1,7 @@
 import { all, fork } from 'redux-saga/effects';
 import watchSignUp from './signup';
+import authSaga from './signIn';
 
-//user redux middleware
 export default function* userSaga() {
-  yield all([fork(watchSignUp)]);
+  yield all([fork(watchSignUp), fork(authSaga)]);
 }
