@@ -1,6 +1,6 @@
 import Modal from '@src/components/frames/Modal/Modal';
 import React, { useCallback, useState } from 'react';
-import { CardWrapper, Card, Global, Input } from './styled';
+import { CardWrapper, Card, Input, MainWrapper } from './styled';
 
 const Email = () => {
   const [showPhoneModal, setShowPhoneModal] = useState(false);
@@ -20,8 +20,7 @@ const Email = () => {
   }, []);
 
   return (
-    <>
-      <Global />
+    <MainWrapper>
       <div style={{ textAlign: 'center', marginBottom: 30, fontSize: '2rem' }}> Kakao</div>
       <CardWrapper>
         <Card className="title">카카오 계정을 찾을 방법을 선택해주세요</Card>
@@ -61,7 +60,7 @@ const Email = () => {
           </form>
         </Modal>
       )}
-    </>
+    </MainWrapper>
   );
 };
 

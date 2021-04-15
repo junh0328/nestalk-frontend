@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Button, Form, Input } from 'antd';
 import styled from 'styled-components';
 import { mailJ, pwJ, nameJ, phoneJ, birthdayJ } from '@util/pattern';
@@ -6,6 +6,8 @@ import SignupStyle from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@src/reducers';
 import { SIGNUP_REQUEST } from '@src/reducers/user/singup';
+import 'antd/dist/antd.less';
+import { message } from 'antd';
 
 const ErrorMessage = styled.div`
   color: red;
@@ -13,6 +15,7 @@ const ErrorMessage = styled.div`
 
 const Signup = () => {
   const style = useMemo(() => ({ width: 250, marginTop: 5, marginBottom: 5 }), []);
+  const colorRed = useMemo(() => ({ color: 'red' }), []);
   const dispatch = useDispatch();
   const { info } = useSelector((state: RootState) => state.user);
 
@@ -100,17 +103,15 @@ const Signup = () => {
 
   const onSubmit = useCallback(() => {
     if (!emailError || !passwordError || !passwordCheckError || !nameError || !birthdayError || !phoneError) {
-      alert('회원가입 요청중')!;
+      message.info('회원가입 요청중')!;
       dispatch({
         type: SIGNUP_REQUEST,
         data: { email, name, password, birthday, phone },
       });
     } else {
-      alert('에러 메세지를 확인해주세요');
+      message.error('에러 메세지를 확인해주세요');
     }
-  }, []);
-
-  useEffect(() => {});
+  }, [emailError, passwordError, passwordCheckError, nameError, birthdayError, phoneError]);
 
   return (
     <>
@@ -129,7 +130,7 @@ const Signup = () => {
               onChange={onChangeEmail}
               placeholder=" '@' 를 포함한 이메일을 입력해주세요"
             />
-            {emailError && <ErrorMessage style={{ color: 'red' }}>올바른 형식의 이메일을 입력하세요</ErrorMessage>}
+            {emailError && <ErrorMessage style={colorRed}>올바른 형식의 이메일을 입력하세요</ErrorMessage>}
           </div>
 
           <div>
@@ -143,7 +144,7 @@ const Signup = () => {
               onChange={onChangePassword}
               placeholder="비밀번호는 8자 이상입니다."
             />
-            {passwordError && <ErrorMessage style={{ color: 'red' }}>올바른 형식의 비밀번호를 입력하세요</ErrorMessage>}
+            {passwordError && <ErrorMessage style={colorRed}>올바른 형식의 비밀번호를 입력하세요</ErrorMessage>}
           </div>
           <div>
             <label htmlFor="user-password2">비밀번호 확인</label>
@@ -156,7 +157,7 @@ const Signup = () => {
               onChange={onChangePasswordCheck}
               placeholder="비밀번호는 8자 이상입니다."
             />
-            {passwordCheckError && <ErrorMessage style={{ color: 'red' }}>비밀번호가 일치하지 않습니다.</ErrorMessage>}
+            {passwordCheckError && <ErrorMessage style={colorRed}>비밀번호가 일치하지 않습니다.</ErrorMessage>}
           </div>
           <div>
             <label htmlFor="user-name">이름</label>
@@ -169,7 +170,7 @@ const Signup = () => {
               onChange={onChangeName}
               placeholder="사용하실 닉네임을 입력해주세요"
             />
-            {nameError && <ErrorMessage style={{ color: 'red' }}>이름은 한글만 사용 가능합니다.</ErrorMessage>}
+            {nameError && <ErrorMessage style={colorRed}>이름은 한글만 사용 가능합니다.</ErrorMessage>}
           </div>
           <div>
             <label htmlFor="user-birthday">생년월일</label>
@@ -182,7 +183,7 @@ const Signup = () => {
               onChange={onChangeBirthday}
               placeholder="6자리에 맞춰 입력해주세요 예) 970328"
             />
-            {birthdayError && <ErrorMessage style={{ color: 'red' }}>유효하지 않은 생년월일입니다.</ErrorMessage>}
+            {birthdayError && <ErrorMessage style={colorRed}>유효하지 않은 생년월일입니다.</ErrorMessage>}
           </div>
           <div>
             <label htmlFor="user-phone">휴대전화</label>
@@ -195,7 +196,7 @@ const Signup = () => {
               onChange={onChangePhone}
               placeholder="(-)를 빼고 입력해주세요"
             />
-            {phoneError && <ErrorMessage style={{ color: 'red' }}>유효하지 않은 휴대폰 번호입니다.</ErrorMessage>}
+            {phoneError && <ErrorMessage style={colorRed}>유효하지 않은 휴대폰 번호입니다.</ErrorMessage>}
           </div>
           <div style={{ marginTop: 10 }}>
             <Button type="primary" htmlType="submit">

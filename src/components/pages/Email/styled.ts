@@ -1,12 +1,11 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
-export const Global = createGlobalStyle`
-    #__next{
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
+export const MainWrapper = styled.div`
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const CardWrapper = styled.div`

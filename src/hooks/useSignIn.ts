@@ -5,7 +5,7 @@ import { useCookies } from 'react-cookie';
 import jwt from 'jsonwebtoken';
 
 import { RootState } from '@src/reducers';
-import { signInRequest, loadUser, logout } from '@src/reducers/user/signIn';
+import { signInRequest, loadUser, logout } from '@src/reducers/user/signin';
 import { UserInfo } from '@src/reducers/user';
 
 const useSignIn = (): {
