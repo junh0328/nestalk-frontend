@@ -6,8 +6,8 @@ import { roomListRequest } from '@src/reducers/chat/roomList';
 
 //화면 components
 // export { default } from '@pages/Home';
-// export { default } from '@pages/Home';
 export { default } from '@pages/Signup';
+// export { default } from '@pages/Login';
 // export { default } from '@pages/Email';
 
 //ssr renderings

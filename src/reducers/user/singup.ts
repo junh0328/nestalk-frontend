@@ -27,7 +27,7 @@ export interface SignUpSuccess {
 
 export interface SignUpFailure {
   type: typeof SIGNUP_FAILURE;
-  error: string;
+  error: Error;
 }
 
 //signup request
@@ -40,7 +40,7 @@ export const signUpSuccess = () => ({
   type: SIGNUP_SUCCESS,
 });
 
-export const signUpFailure = (error: string) => ({
+export const signUpFailure = (error: Error) => ({
   type: SIGNUP_FAILURE,
   error,
 });

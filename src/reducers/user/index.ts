@@ -15,11 +15,13 @@ export interface UserInfo {
 export interface UserInitialState {
   info: UserInfo | null;
   authError: null | Error;
+  signUpError: null | Error;
 }
 
 const initialState: UserInitialState = {
   info: null,
   authError: null,
+  signUpError: null,
 };
 
 type ReducerAction = SignInActions | SignUp;
@@ -43,11 +45,11 @@ const user = (state: UserInitialState = initialState, action: ReducerAction) =>
         break;
       case SIGNUP_SUCCESS:
         draft.info = null;
+        // signUp request를 통해 서버에서 데이터를 받아올 경우 추가로 넣어줘야 할 듯 합니다.
         break;
       case SIGNUP_FAILURE:
-        draft.info = null;
+        draft.signUpError = action.error;
         break;
-
       case LOAD_USER:
         draft.info = action.payload.info;
         break;
