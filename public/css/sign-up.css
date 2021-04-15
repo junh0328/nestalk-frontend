@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+body {
+    min-width: 320px;
+    max-width: 720px;
+    font-size: 10px;
+    background-color: var(--white-color);
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    color: var(--black-color);
+    margin: 0 auto;
+}
+
+.container {
+    min-width: 300px;
+    max-width: 750px;
+    padding: var(--gap-10);
+    margin: 0 auto;
+    font-size: var(--font-size-large);
+}
+
+/* common */
+/* input */
+input {
+    width: 100%;
+    padding: var(--gap-10) 0;
+    border-bottom: 1px solid var(--gray-color);
+}
+
+/* select */
+select {
+    width: 15%;
+    padding: var(--gap-10) 0;
+}
+
+/* button */
+.button-close,
+.button-next,
+.button-sign-up,
+.button-start {
+    width: 100%;
+    padding: var(--gap-10);
+    text-align: center;
+    background-color: var(--primary-color);
+    transition: background-color 0.25s ease-in-out;
+    border-radius: 3px;
+    margin-top: 40px;
+}
+.button-close:hover,
+.button-next:hover,
+.button-sign-up:hover,
+.button-start:hover {
+    background-color: var(--secondary-color);
+}
+
+/* notice */
+.notice {
+    color: var(--notice-color);
+    padding-bottom: 0;
+}
+
+/* title */
+.title {
+    font-weight: 500;
+    padding-top: 40px;
+}
+.sub-title {
+    padding: 40px 0 0;
+}
+
+p {
+    padding: var(--gap-10) 0;
+}
+
+/* main */
+.logo {
+    padding-top: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* step1 */
+.step1 {
+    text-align: center;
+}
+
+.step1 .title {
+    padding-bottom: 0;
+}
+
+.step1 p {
+    color: var(--gray-color);
+}
+
+/* step2 */
+.step2 .check {
+    width: 20px;
+    position: absolute;
+    top: 235px;
+    right: 10px;
+}
+
+.user-mail button {
+    padding: var(--gap-10) var(--gap-20);
+    border-radius: 50px;
+    border: 1px solid var(--gray-color);
+    margin-top: 30px;
+}
+
+.user-mail button:hover {
+    background-color: transparent;
+}
+
+.user-birth {
+    border-bottom: 1px solid var(--gray-color);
+}
+
+/* step3 */
+.step3 {
+    text-align: center;
+}
+
+.profile-wrap {
+    padding-top: 30px;
+}
+
+.profile-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 23px;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 1px solid var(--primary-color);
+}
+
+.profile-box img {
+    width: 100%;
+}
+
+.button-edit-profile {
+    border-radius: 50%;
+    padding: 4px 4px 0;
+    background-color: var(--white-color);
+    border: 1px solid var(--gray-color);
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    transform: translateX(50%);
+}
+
+.button-edit-profile img {
+    width: 16px;
+}
+
+.nickname {
+    padding: 0;
+}
+
+.fade {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: var(--gap-20);
+}
+
+.modal-edit-profile {
+    width: 300px;
+    position: relative;
+    background-color: var(--white-color);
+    text-align: center;
+    overflow: hidden;
+    padding: var(--gap-20);
+}
+
+.modal-edit-profile button {
+    width: 100%;
+    padding: var(--gap-10);
+    margin: 0 0 5px;
+    border: 1px solid var(--primary-color);
+}
+
+.modal-edit-profile button:nth-child(3) {
+    margin: 10px 0 0;
+}
+
+/* 숨김처리 */
+.step1 {
+    display: none;
+}
+.step2 {
+    display: none;
+}
+/* 메일 > 인증메일 발송 완료시 표시 */
+.user-mail input:nth-child(2) {
+    display: none;
+}
+/* 메일 > 인증번호 확인 완료시 표시 */
+.step2 .check {
+    display: none;
+}
+/* 메일 > 유효성 > 이메일주소 미입력시 */
+.no-mail {
+    display: none;
+}
+/* 메일 > 유효성 > 이메일주소 중복시 */
+.overlap-mail {
+    display: none;
+}
+/* 인증번호 > 유효성 > 인증번호 오류시 */
+.different-number {
+    display: none;
+}
+.button-send {
+    /* display: none; */
+}
+.button-submit {
+    display: none;
+}
+/* 비밀번호 > 유효성 > 비밀번호 미입력시 */
+.no-password {
+    display: none;
+}
+/* 비밀번호 > 유효성 > 비밀번호 오류시 */
+.differen-password {
+    display: none;
+}
+/* 닉네임 > 유효성 > 닉네임 미입력시 */
+.no-nickname {
+    display: none;
+}
+.step3 {
+    /* display: none; */
+}
+.fade {
+    display: none;
+}

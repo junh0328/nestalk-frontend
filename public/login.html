@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nestalk</title>
+        <link
+            href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+            rel='stylesheet'
+            type='text/css'>
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/variables.css">
+        <link rel="stylesheet" href="./css/login.css">
+    </head>
+
+    <body>
+        <main class="container">
+            <section class="login-content">
+                <!-- 로고 -->
+                <h1 class="logo">Nestalk</h1>
+
+                <!-- 메일/비밀번호 입력 -->
+                <form action="#">
+                    <div class="mail-wrap">
+                        <input type="text" placeholder="Nestalk계정(이메일)">
+
+                        <!-- 저장된 계정 드롭다운 -->
+                        <button type="button" class="button-remember-mail down"><img src="./image/icon/down-24px.svg" alt="저장된 계정 더보기"></button>
+                        <button type="button" class="button-remember-mail up"><img src="./image/icon/up-24px.svg" alt="저장된 계정 더보기 닫기"></button>
+                    </div>
+
+                    <!-- 버튼 클릭시 저장된 계정 드롭다운 -->
+                    <ul class="remember-mail">
+                        <li>mail1@doongji.com</li>
+                    </ul>
+
+                    <input type="password" placeholder="비밀번호">
+                </form>
+
+                <!-- 로그인 > 메일&비밀번호 미입력시 비활성화 -->
+                <!-- 로그인 > 메일&비밀번호 입력시 class active 부여 -->
+                <button type="submit" class="button-login">로그인</button>
+
+                <!-- 로그인 > 유효성 > 계정 또는 비밀번호 오류시 -->
+                <p class="notice">Nestalk계정 또는 비밀번호를 다시 확인해 주세요.</p>
+            </section>
+
+            <!-- 회원가입/계정 찾기/비밀번호 찾기 -->
+            <section class="button-wrap">
+                <a href="./sign-up.html" class="button-sign-up" target="_blank">회원가입</a>
+                <div class="wrap">
+                    <a href="#" class="button-find-mail">계정 찾기</a> |
+                    <a href="#" class="button-find-password">비밀번호 찾기</a>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

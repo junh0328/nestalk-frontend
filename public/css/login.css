@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+body {
+    min-width: 320px;
+    max-width: 720px;
+    font-size: 10px;
+    background-color: var(--primary-color);
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    color: var(--black-color);
+    margin: 0 auto;
+}
+
+.container {
+    width: 350px;
+    padding: var(--gap-10);
+    margin: 0 auto;
+    font-size: var(--font-size-large);
+}
+
+/* main */
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 40px var(--gap-20);
+    text-align: center;
+    font-weight: 500;
+    font-size: 2em;
+}
+
+/* 메일/비밀번호 입력 */
+.login-content {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+form {
+    background-color: var(--white-color);
+}
+
+.mail-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+input {
+    width: 100%;
+    padding: var(--gap-10);
+    cursor: text;
+}
+
+/* 저장된 계정 드롭다운 */
+.button-remember-mail {
+    width: 40px;
+    height: 40px;
+    padding: 0 var(--gap-10);
+}
+
+.button-remember-mail img {
+    width: 100%;
+}
+
+.remember-mail {
+    width: 100%;
+    position: absolute;
+    top: 160px;
+    left: 0;
+    border-top: 1px solid var(--primary-color);
+}
+
+.remember-mail li {
+    padding: var(--gap-5) var(--gap-10);
+    cursor: pointer;
+    background-color: var(--white-color);
+}
+
+.remember-mail li:hover {
+    background-color: var(--secondary-color);
+}
+
+/* 로그인 */
+.button-login, .button-login:active {
+    width: 100%;
+    padding: var(--gap-10);
+    color: var(--gray-color);
+    text-align: center;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+    margin-top: var(--gap-20);
+    transition: background-color 0.25s ease-in-out;
+    cursor: Default;
+}
+
+/* 로그인 > 메일&비밀번호 입력시 */
+.active {
+    color: var(--white-color);
+    background-color: var(--icon-color);
+    cursor: pointer;
+}
+
+/* 로그인 > 유효성 > 계정 또는 비밀번호 오류시 */
+.notice {
+    color: var(--notice-color);
+    padding: var(--gap-10) 0;
+}
+
+/* 회원가입/계정 찾기/비밀번호 찾기 */
+.button-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: var(--gap-10) 0;
+    text-align: center;
+}
+
+
+
+/* 숨김처리 */
+button.down {
+    /* display: none; */
+}
+button.up {
+    display: none;
+}
+.save-mail {
+    display: none;
+}
+.notice {
+    display: none;
+}
