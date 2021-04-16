@@ -14,7 +14,7 @@ const ErrorMessage = styled.div`
 `;
 
 const Signup = () => {
-  const style = useMemo(() => ({ width: 250, marginTop: 5, marginBottom: 5 }), []);
+  const style = useMemo(() => ({ width: 300, marginTop: 5, marginBottom: 5 }), []);
   const colorRed = useMemo(() => ({ color: 'red' }), []);
   const dispatch = useDispatch();
   const { info } = useSelector((state: RootState) => state.user);
@@ -36,11 +36,8 @@ const Signup = () => {
   const onChangeEmail = useCallback(
     (e) => {
       setEmail(e.target.value);
-      if (!email.match(mailJ)) {
-        setEmailError(true);
-      } else if (email.match(mailJ)) {
-        setEmailError(false);
-      }
+      const result = mailJ.test(email);
+      setEmailError(!result);
     },
     [email, emailError],
   );
@@ -48,11 +45,8 @@ const Signup = () => {
   const onChangePassword = useCallback(
     (e) => {
       setPassword(e.target.value);
-      if (!password.match(pwJ)) {
-        setPasswordError(true);
-      } else if (password.match(pwJ)) {
-        setPasswordError(false);
-      }
+      const result = pwJ.test(password);
+      setPasswordError(!result);
     },
     [password, passwordError],
   );
@@ -68,11 +62,8 @@ const Signup = () => {
   const onChangeName = useCallback(
     (e) => {
       setName(e.target.value);
-      if (!name.match(nameJ)) {
-        setNameError(true);
-      } else if (name.match(nameJ)) {
-        setNameError(false);
-      }
+      const result = nameJ.test(name);
+      setNameError(!result);
     },
     [name, nameError],
   );
@@ -80,11 +71,8 @@ const Signup = () => {
   const onChangeBirthday = useCallback(
     (e) => {
       setBirthday(e.target.value);
-      if (!birthday.match(birthdayJ)) {
-        setBirthdayError(true);
-      } else if (birthday.match(birthdayJ)) {
-        setBirthdayError(false);
-      }
+      const result = birthdayJ.test(birthday);
+      setBirthdayError(!result);
     },
     [birthday],
   );
@@ -92,11 +80,8 @@ const Signup = () => {
   const onChangePhone = useCallback(
     (e) => {
       setPhone(e.target.value);
-      if (!phone.match(phoneJ)) {
-        setPhoneError(true);
-      } else if (phone.match(phoneJ)) {
-        setPhoneError(false);
-      }
+      const result = phoneJ.test(phone);
+      setPhoneError(!result);
     },
     [phone, phoneError],
   );
@@ -142,7 +127,7 @@ const Signup = () => {
               value={password}
               required
               onChange={onChangePassword}
-              placeholder="비밀번호는 8자 이상입니다."
+              placeholder="비밀번호는 특수문자를 포함한 8자 이상입니다."
             />
             {passwordError && <ErrorMessage style={colorRed}>올바른 형식의 비밀번호를 입력하세요</ErrorMessage>}
           </div>
@@ -155,7 +140,7 @@ const Signup = () => {
               type="password"
               value={passwordCheck}
               onChange={onChangePasswordCheck}
-              placeholder="비밀번호는 8자 이상입니다."
+              placeholder="비밀번호는 특수문자를 포함한 8자 이상입니다."
             />
             {passwordCheckError && <ErrorMessage style={colorRed}>비밀번호가 일치하지 않습니다.</ErrorMessage>}
           </div>
